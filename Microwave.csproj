@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C00FE0E8-7815-4D3E-B530-31B86BD534C4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microwave</RootNamespace>
+    <AssemblyName>Microwave</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AmplifierDesignControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AmplifierDesignControl.Designer.cs">
+      <DependentUpon>AmplifierDesignControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RFDesign\FilterDesign.cs" />
+    <Compile Include="GeneralizedDesignControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GeneralizedDesignControl.Designer.cs">
+      <DependentUpon>GeneralizedDesignControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="General_LC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General_LC.Designer.cs">
+      <DependentUpon>General_LC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportExport.cs" />
+    <Compile Include="RFDesign\OnePortNetwork.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MenialOperations.cs" />
+    <Compile Include="RFDesign\SmithChart.cs" />
+    <Compile Include="SmithChartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmithChartForm.Designer.cs">
+      <DependentUpon>SmithChartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThreadSafe.cs" />
+    <Compile Include="RFDesign\TwoPortNetwork.cs" />
+    <Compile Include="NumericalMethods.cs" />
+    <Compile Include="RFDesign\PAdesign.cs" />
+    <Compile Include="Pareto.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Convenience\" />
+    <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AmplifierDesignControl.resx">
+      <DependentUpon>AmplifierDesignControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralizedDesignControl.resx">
+      <DependentUpon>GeneralizedDesignControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General_LC.resx">
+      <DependentUpon>General_LC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmithChartForm.resx">
+      <DependentUpon>SmithChartForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
